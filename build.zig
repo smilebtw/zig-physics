@@ -1,6 +1,5 @@
 const std = @import("std");
 const raylib = @import("src/raylib/build.zig");
-const raygui = @import("src/raygui/build.zig");
 
 pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{});
@@ -18,5 +17,4 @@ pub fn build(b: *std.Build) !void {
     run_cmd.step.dependOn(b.getInstallStep());
 
     raylib.addTo(b, exe, target, mode);
-    raygui.addTo(b, exe, target, mode);
 }
